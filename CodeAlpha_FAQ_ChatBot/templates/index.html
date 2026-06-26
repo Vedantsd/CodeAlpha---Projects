@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FAQ Chatbot</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Sora:wght@600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
+</head>
+<body>
+
+  <div class="layout">
+
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <span class="logo-text">FAQ<strong>Bot</strong></span>
+      </div>
+      <p class="sidebar-sub">Browse topics or ask a question</p>
+
+      <div class="faq-search-wrap">
+        <input id="faqSearch" type="text" placeholder="Filter FAQs…" autocomplete="off" />
+      </div>
+
+      <ul class="faq-list" id="faqList">
+        <li class="faq-loading">Loading topics…</li>
+      </ul>
+    </aside>
+
+    <main class="chat-main">
+      <header class="chat-header">
+        <div class="header-info">
+          <h1>Support Assistant</h1>
+          <span class="status-dot"></span>
+          <span class="status-label">Online</span>
+        </div>
+      </header>
+
+      <section class="chat-window" id="chatWindow">
+        <div class="message bot-message">
+          <div class="avatar bot-avatar">B</div>
+          <div class="bubble">
+            <p>Hi there! I'm your FAQ assistant. Ask me anything or pick a topic from the sidebar.</p>
+          </div>
+        </div>
+      </section>
+
+      <footer class="chat-footer">
+        <div class="input-row">
+          <textarea
+            id="userInput"
+            rows="1"
+            placeholder="Type your question…"
+            autocomplete="off"
+          ></textarea>
+          <button id="sendBtn" aria-label="Send">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="22" y1="2" x2="11" y2="13"></line>
+              <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+            </svg>
+          </button>
+        </div>
+        <p class="footer-note">Responses are matched from a curated FAQ database.</p>
+      </footer>
+    </main>
+
+  </div>
+
+  <script src="{{ url_for('static', filename='js/chat.js') }}"></script>
+</body>
+</html>
